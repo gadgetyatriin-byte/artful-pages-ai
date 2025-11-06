@@ -7,11 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { toast } from "sonner";
 import * as pdfjsLib from "pdfjs-dist";
-import workerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+import PdfWorker from "pdfjs-dist/build/pdf.worker.min.mjs?worker";
 import { jsPDF } from "jspdf";
 
 // Configure PDF.js worker (ESM-friendly)
-const pdfWorker = new Worker(workerUrl, { type: "module" });
+const pdfWorker = new PdfWorker();
 pdfjsLib.GlobalWorkerOptions.workerPort = pdfWorker;
 
 export default function Flipbook() {
