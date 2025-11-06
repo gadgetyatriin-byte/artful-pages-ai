@@ -10,8 +10,9 @@ import * as pdfjsLib from "pdfjs-dist";
 import workerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import { jsPDF } from "jspdf";
 
-// Configure PDF.js worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
+// Configure PDF.js worker (ESM-friendly)
+const pdfWorker = new Worker(workerUrl, { type: "module" });
+pdfjsLib.GlobalWorkerOptions.workerPort = pdfWorker;
 
 export default function Flipbook() {
   const { profile } = useProfile();
