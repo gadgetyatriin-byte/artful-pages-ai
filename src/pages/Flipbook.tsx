@@ -47,8 +47,9 @@ export default function Flipbook() {
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (!file || file.type !== 'application/pdf') {
-      toast.error("Please upload a valid PDF file");
+    const isPdf = file && ((file.type && file.type.toLowerCase().includes('pdf')) || file.name.toLowerCase().endsWith('.pdf'));
+    if (!file || !isPdf) {
+      toast.error("Please upload a valid PDF file (.pdf)");
       return;
     }
 
@@ -77,7 +78,8 @@ export default function Flipbook() {
       toast.success(`Loaded ${pdf.numPages} pages successfully`);
     } catch (error) {
       console.error('Error processing PDF:', error);
-      toast.error("Failed to process PDF file");
+      const message = error instanceof Error ? error.message : '';
+      toast.error(`Failed to process PDF file${message ? `: ${message}` : ''}`);
     } finally {
       setIsLoading(false);
     }
