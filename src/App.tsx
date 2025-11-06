@@ -14,6 +14,7 @@ import Account from "./pages/Account";
 import UpgradePage from "./pages/UpgradePage";
 import AdminPage from "./pages/AdminPage";
 import NotFound from "./pages/NotFound";
+import WarriorPlusActivation from "./pages/WarriorPlusActivation";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +60,9 @@ const App = () => (
                 <UpgradePage />
               </ProtectedRoute>
             } />
+            
+            {/* WarriorPlus Integration Routes */}
+            <Route path="/warriorplus/:plan" element={<WarriorPlusActivation />} />
             
             <Route path="/admin" element={
               <ProtectedRoute>
