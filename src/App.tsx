@@ -64,7 +64,8 @@ const App = () => (
             {/* WarriorPlus Integration Routes */}
             <Route path="/warriorplus/:plan" element={<WarriorPlusActivation />} />
             
-            <Route path="/admin" element={
+            {/* Secret Admin Route */}
+            <Route path="/secret-admin-panel-2024" element={
               <ProtectedRoute>
                 <AdminPage />
               </ProtectedRoute>
