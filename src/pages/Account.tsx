@@ -83,76 +83,17 @@ export default function Account() {
                 Upgrade Your Plan
               </CardTitle>
               <CardDescription>
-                Unlock more generations and exclusive features
+                Plans can only be upgraded through WarriorPlus
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                {profile.plan === 'basic' && (
-                  <>
-                    <Card className="border-yellow-500">
-                      <CardHeader>
-                        <CardTitle>Golden Edition</CardTitle>
-                        <CardDescription>$27</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-2 text-sm">
-                          <li>✓ 50 generations per day</li>
-                          <li>✓ All basic features</li>
-                          <li>✓ Priority support</li>
-                        </ul>
-                        <Button 
-                          className="w-full mt-4"
-                          onClick={() => navigate("/upgrade/golden")}
-                        >
-                          Upgrade to Golden
-                        </Button>
-                      </CardContent>
-                    </Card>
-                    <Card className="border-purple-500">
-                      <CardHeader>
-                        <CardTitle>Unlimited Access</CardTitle>
-                        <CardDescription>$47</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-2 text-sm">
-                          <li>✓ Unlimited generations</li>
-                          <li>✓ Flipbook creator access</li>
-                          <li>✓ All features unlocked</li>
-                          <li>✓ Premium support</li>
-                        </ul>
-                        <Button 
-                          className="w-full mt-4"
-                          onClick={() => navigate("/upgrade/unlimited")}
-                        >
-                          Upgrade to Unlimited
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  </>
-                )}
-                {profile.plan === 'golden' && (
-                  <Card className="border-purple-500">
-                    <CardHeader>
-                      <CardTitle>Unlimited Access</CardTitle>
-                      <CardDescription>$47</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2 text-sm">
-                        <li>✓ Unlimited generations</li>
-                        <li>✓ Flipbook creator access</li>
-                        <li>✓ All features unlocked</li>
-                        <li>✓ Premium support</li>
-                      </ul>
-                      <Button 
-                        className="w-full mt-4"
-                        onClick={() => navigate("/upgrade/unlimited")}
-                      >
-                        Upgrade to Unlimited
-                      </Button>
-                    </CardContent>
-                  </Card>
-                )}
+              <div className="p-6 border border-border rounded-lg bg-muted/50 text-center">
+                <p className="text-muted-foreground mb-2">
+                  To upgrade your plan, please purchase through WarriorPlus.
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Your plan will be automatically activated using your purchase email.
+                </p>
               </div>
             </CardContent>
           </Card>
