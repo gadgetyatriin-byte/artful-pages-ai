@@ -31,7 +31,7 @@ export function AppSidebar() {
 
   return (
     <Sidebar className="border-r border-border/50 bg-card/50 backdrop-blur-sm">
-      <SidebarHeader className="border-b border-border/50 p-4">
+      <SidebarHeader className="hidden lg:flex border-b border-border/50 p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Palette className="h-6 w-6 text-primary" />
