@@ -55,11 +55,6 @@ const App = () => (
               </ProtectedRoute>
             } />
             
-            <Route path="/upgrade/:plan" element={
-              <ProtectedRoute>
-                <UpgradePage />
-              </ProtectedRoute>
-            } />
             
             {/* WarriorPlus Integration Routes */}
             <Route path="/warriorplus/:plan" element={<WarriorPlusActivation />} />
